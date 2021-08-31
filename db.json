@@ -1,0 +1,48 @@
+{
+    "buses": [
+      {
+          "id": 1,
+          "model": "volvo-A1",
+          "time": "10.30",
+          "from": "Kolkata",
+          "to": "Mumbai",
+          "seat": "40",
+          "price": 2000
+      }, {
+        "id": 2,
+        "model": "volvo-B1",
+        "time": "15.30",
+        "from": "Kolkata",
+        "to": "Mumbai",
+        "seat": "10",
+        "price": 1700
+      },
+      {
+        "id": 3,
+        "model": "volvo-A4",
+        "time": "10.30",
+        "from": "Mumbai",
+        "to": "Delhi",
+        "seat": "25",
+        "price": 2500
+      },
+      {
+        "id": 4,
+        "model": "volvo-AC",
+        "time": "4.30",
+        "from": "Kolkata",
+        "to": "Delhi",
+        "seat": "25",
+        "price": 2200
+      },
+      {
+        "id": 5,
+        "model": "volvo-AC-1A",
+        "time": "19.30",
+        "from": "Kolkata",
+        "to": "Delhi",
+        "seat": "15",
+        "price": 2600
+      }    
+    ]
+  }

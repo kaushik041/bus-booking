@@ -1,0 +1,60 @@
+<h4 class="container m-4"><b>Provide the details to go to payment section</b></h4>
+<div class="container align-items-center" style="width:60%; background-color:antiquewhite;padding: 3%;
+border-radius: 5%;">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Title</label>
+                <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                    <option value="">Choose Title</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Ms">Ms</option>
+                </select>
+                <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                    <div *ngIf="f.title.errors.required">Title is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-7">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-7">
+                    <label>Phone No.</label>
+                    <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone No. is required</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="form-group">
+            <button class="btn btn-danger float-right">
+                <span class="spinner-border spinner-border-sm mr-1"></span>
+                Proceed to Payment
+            </button>
+        </div>
+    </form>
+</div>

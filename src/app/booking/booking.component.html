@@ -1,0 +1,55 @@
+<!-- <img class="cover_img" src="/assets/cover3.jpg" alt="image"> -->
+<div class="container search_position">
+    <div class="row">
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">  
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="padding:20px;border-radius:10px;width:100%;" (change)="changeFromCity($event)" formControlName="fromcityName">
+            <option value="">Choose Source Location</option>
+            <option *ngFor="let city of fromCity" [ngValue]="city">{{city}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="isSubmitted && fromcityName.errors?.required">
+            <sup>*</sup>Please enter your source location name
+         </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom:20px">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="padding:20px;border-radius:10px;width:100%;" (change)="changeToCity($event)" formControlName="tocityName">
+            <option value="">Choose Destination Location</option>
+            <option *ngFor="let city of toCity" [ngValue]="city">{{city}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="isSubmitted && tocityName.errors?.required">
+            <sup>*</sup>Please enter your Destination location name
+         </div>
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-danger btn-lg btn-block" style="padding:18px">Search</button>
+      </div>
+      </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 70px;">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Bus Model</th>
+                    <th scope="col">seat</th>
+                    <th scope="col">Price(INR)</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let bus of SearchBus">
+                    <td>{{bus.model}}</td>
+                    <td>{{bus.time}}</td>
+                    <td>{{bus.seat}}</td>
+                    <td>{{bus.price}}</td>
+                    <td>
+                      <span class="edit btn-danger btn-sm btn"><a routerLink="/booking/view/{{bus.id}}" style="color:azure">View</a></span> &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
