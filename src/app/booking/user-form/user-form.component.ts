@@ -28,7 +28,8 @@ export class UserFormComponent implements OnInit {
     this.submitted = true;
     if (this.form.invalid) {
       return;
-  }
+    }
+    alert('Try after some times');
   }
 
 }

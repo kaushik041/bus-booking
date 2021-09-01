@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 export class Bus {
   id: string;
   model: string;
-  time: string;
+  time: Date;
   from: string;
   to: string;
   seat: string;
@@ -24,30 +24,12 @@ export class BusBookingService {
     })
   }  
 
-  // getBuses(id): Observable<Bus> {
-  //   return this.httpClient.get<Bus>(endpoint)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
-
   getBuses() {
     return this.httpClient.get<Bus[]>(endpoint);
   }
 
   getBusById(id: string) {
-    console.log(id);
     return this.httpClient.get<Bus>(`${endpoint}/${id}`);
 }
 
-  processError(err) {
-    let message = '';
-    if(err.error instanceof ErrorEvent) {
-     message = err.error.message;
-    } else {
-     message = `Error Code: ${err.status}\nMessage: ${err.message}`;
-    }
-    return throwError(message);
- }
 }

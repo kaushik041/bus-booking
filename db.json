@@ -3,7 +3,7 @@
       {
           "id": 1,
           "model": "volvo-A1",
-          "time": "10.30",
+          "time": "10:30",
           "from": "Kolkata",
           "to": "Mumbai",
           "seat": "40",
@@ -11,7 +11,7 @@
       }, {
         "id": 2,
         "model": "volvo-B1",
-        "time": "15.30",
+        "time": "15:30",
         "from": "Kolkata",
         "to": "Mumbai",
         "seat": "10",
@@ -20,7 +20,7 @@
       {
         "id": 3,
         "model": "volvo-A4",
-        "time": "10.30",
+        "time": "13:30",
         "from": "Mumbai",
         "to": "Delhi",
         "seat": "25",
@@ -29,7 +29,7 @@
       {
         "id": 4,
         "model": "volvo-AC",
-        "time": "4.30",
+        "time": "16:30",
         "from": "Kolkata",
         "to": "Delhi",
         "seat": "25",
@@ -38,11 +38,56 @@
       {
         "id": 5,
         "model": "volvo-AC-1A",
-        "time": "19.30",
+        "time": "19:30",
         "from": "Kolkata",
         "to": "Delhi",
         "seat": "15",
         "price": 2600
-      }    
+      },
+      {
+        "id": 6,
+        "model": "volvo-AC-1A",
+        "time": "19:30",
+        "from": "Kolkata",
+        "to": "Delhi",
+        "seat": "15",
+        "price": 2600
+      },
+      {
+        "id": 7,
+        "model": "volvo-AC-1A",
+        "time": "19:30",
+        "from": "Bengaluru",
+        "to": "Delhi",
+        "seat": "15",
+        "price": 2600
+      },
+      {
+        "id": 8,
+        "model": "volvo-AC-1A",
+        "time": "20:35",
+        "from": "Hydrabad",
+        "to": "Delhi",
+        "seat": "5",
+        "price": 3000
+      },
+      {
+        "id": 9,
+        "model": "volvo-AC-2A",
+        "time": "22:30",
+        "from": "Hydrabad",
+        "to": "Delhi",
+        "seat": "20",
+        "price": 3600
+      },
+      {
+        "id": 10,
+        "model": "volvo-AC-2C",
+        "time": "14:30",
+        "from": "Kolkata",
+        "to": "Hydrabad",
+        "seat": "10",
+        "price": 1600
+      }
     ]
   }

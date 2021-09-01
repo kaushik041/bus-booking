@@ -26,11 +26,15 @@
       </form>
     </div>
     <div class="row">
+      <div class="col-md-4 container">
+        <p style="margin-left: 10px;">*Search result appears for Today's bus availability</p>
+      </div>
         <div class="col-md-12" style="margin-top: 70px;">
             <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">Bus Model</th>
+                    <th scope="col">Departure Time</th>
                     <th scope="col">seat</th>
                     <th scope="col">Price(INR)</th>
                     <th scope="col">Action</th>
@@ -44,6 +48,11 @@
                     <td>{{bus.price}}</td>
                     <td>
                       <span class="edit btn-danger btn-sm btn"><a routerLink="/booking/view/{{bus.id}}" style="color:azure">View</a></span> &nbsp;
+                    </td>
+                  </tr>
+                  <tr *ngIf="!empty_msg">
+                    <td colspan="5" class="text-center">
+                      <span class="spinner-border spinner-border-lg align-center"><b>No bus available for this location! </b></span>
                     </td>
                   </tr>
                 </tbody>

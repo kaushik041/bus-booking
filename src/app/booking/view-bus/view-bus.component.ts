@@ -21,7 +21,6 @@ export class ViewBusComponent implements OnInit {
       .subscribe(
         data => {
           this.bus = data;
-          console.log(this.bus);
         },
         error => {
           console.log(error);

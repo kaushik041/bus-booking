@@ -16,6 +16,7 @@ export class BookingComponent implements OnInit {
   Bus: any = [];
   SearchBus : any = [];
   bus: any;
+  empty_msg : boolean;
   toLocation : any;
   fromlocation: any;
   constructor(public fb: FormBuilder, private route:Router, public BusBookingService: BusBookingService) { }
@@ -48,12 +49,11 @@ export class BookingComponent implements OnInit {
   fetchBuses() {
     return this.BusBookingService.getBuses().subscribe((res: {}) => {
       this.Bus = res;
-      console.log(this.Bus);
     })
   }
   onSubmit() {
     this.isSubmitted = true;
-    
+    this.empty_msg = false;
     this.fromlocation = this.bookingForm.get('fromcityName').value;
     this.fromlocation = this.fromlocation.split(" ").splice(-1);
     let from_location = this.fromlocation.toString();
@@ -65,11 +65,12 @@ export class BookingComponent implements OnInit {
     if (!this.bookingForm.valid) {
       return false;
     } else {
-      console.log("locations",from_location,to_location);
         return this.BusBookingService.getBuses().subscribe((res: {}) => {
           this.Bus = res;
           this.SearchBus = this.Bus.filter(to => to.from === from_location && to.to === to_location);
-          console.log(this.SearchBus);
+          if(this.SearchBus.length > 0) {
+            this.empty_msg = true
+          }
         })
     }
 
